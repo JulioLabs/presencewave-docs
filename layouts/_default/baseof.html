@@ -20,6 +20,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/docs.css">
+  <script>window.SFSConfig = { clientId: '902816544552928119' };</script>
+  <script src="https://app.presencewave.com/loader/loader.js" async></script>
 </head>
 <body>
   {{ partial "header.html" . }}
@@ -27,6 +29,8 @@
     {{ partial "sidebar.html" . }}
     <main class="content">
       {{ block "main" . }}{{ end }}
+      {{/* "Was this page helpful?": the SURVEY widget of the presencewave.com domain, as on the generated API and style docs */}}
+      <div class="helpful" data-widget="SURVEY" data-widget-id="902817466783908600"></div>
     </main>
   </div>
   {{ partial "footer.html" . }}
