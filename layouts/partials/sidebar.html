@@ -1,0 +1,18 @@
+<aside id="sidebar" class="sidebar">
+  <nav>
+    {{ $current := . }}
+    {{ range site.Menus.main }}
+      {{ $section := .Page }}
+      <div class="nav-section{{ if and $section ($current.IsDescendant $section) }} active{{ end }}">
+        <a href="{{ .URL }}" class="nav-title{{ if and $section (eq $current.RelPermalink $section.RelPermalink) }} current{{ end }}">{{ .Name }}</a>
+        {{ with $section }}{{ with .RegularPages }}
+        <ul>
+          {{ range . }}
+          <li><a href="{{ .RelPermalink }}"{{ if eq $current.RelPermalink .RelPermalink }} class="current" aria-current="page"{{ end }}>{{ .LinkTitle }}</a></li>
+          {{ end }}
+        </ul>
+        {{ end }}{{ end }}
+      </div>
+    {{ end }}
+  </nav>
+</aside>

@@ -1,0 +1,12 @@
+{{ define "main" }}
+<article class="doc home">
+  <h1>{{ .Title }}</h1>
+  {{ with .Description }}<p class="lead">{{ . }}</p>{{ end }}
+  {{ .Content }}
+  <ul class="cards">
+    {{ range site.Menus.main }}
+    <li><a href="{{ .URL }}"><strong>{{ .Name }}</strong>{{ with .Page }}{{ with .Description }}<span>{{ . }}</span>{{ end }}{{ end }}</a></li>
+    {{ end }}
+  </ul>
+</article>
+{{ end }}

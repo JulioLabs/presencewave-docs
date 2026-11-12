@@ -1,0 +1,48 @@
+baseURL = 'https://docs.presencewave.com/'
+languageCode = 'en-us'
+title = 'PresenceWave Docs'
+enableGitInfo = true
+disableKinds = ['taxonomy', 'term']
+
+[params]
+  description = 'How to use PresenceWave: plans and billing, domains, widgets and every service.'
+  # Keep search engines out until the first real pages are published. Set to false then.
+  noindex = true
+  website = 'https://presencewave.com'
+  app = 'https://app.presencewave.com'
+  apiDocs = 'https://static.presencewave.com/docs/api/index.html'
+  styleDocs = 'https://static.presencewave.com/docs/styles/styles.html'
+
+[markup.goldmark.renderer]
+  unsafe = true
+[markup.goldmark.parser]
+  autoHeadingIDType = 'github'
+[markup.tableOfContents]
+  startLevel = 2
+  endLevel = 3
+
+# Sections in the sidebar, in this order (each section's _index.md sets its weight too).
+[[menu.main]]
+  name = 'Getting started'
+  pageRef = '/getting-started'
+  weight = 10
+[[menu.main]]
+  name = 'Plans and billing'
+  pageRef = '/billing'
+  weight = 20
+[[menu.main]]
+  name = 'Domains'
+  pageRef = '/domains'
+  weight = 30
+[[menu.main]]
+  name = 'Widgets'
+  pageRef = '/widgets'
+  weight = 40
+[[menu.main]]
+  name = 'Services'
+  pageRef = '/services'
+  weight = 50
+[[menu.main]]
+  name = 'Reference'
+  pageRef = '/reference'
+  weight = 60

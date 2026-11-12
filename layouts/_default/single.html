@@ -1,0 +1,10 @@
+{{ define "main" }}
+<article class="doc">
+  {{ with .Parent }}{{ if not .IsHome }}<p class="crumb"><a href="{{ .RelPermalink }}">{{ .Title }}</a></p>{{ end }}{{ end }}
+  <h1>{{ .Title }}</h1>
+  {{ with .Description }}<p class="lead">{{ . }}</p>{{ end }}
+  {{ if and (gt .WordCount 400) .TableOfContents }}<nav class="toc"><strong>On this page</strong>{{ .TableOfContents }}</nav>{{ end }}
+  {{ .Content }}
+  {{ with .Lastmod }}<p class="updated">Last updated {{ .Format "2 January 2006" }}</p>{{ end }}
+</article>
+{{ end }}

@@ -1,0 +1,16 @@
+{{ define "main" }}
+<article class="doc">
+  <h1>{{ .Title }}</h1>
+  {{ with .Description }}<p class="lead">{{ . }}</p>{{ end }}
+  {{ .Content }}
+  {{ with .RegularPages }}
+  <ul class="cards">
+    {{ range . }}
+    <li><a href="{{ .RelPermalink }}"><strong>{{ .Title }}</strong>{{ with .Description }}<span>{{ . }}</span>{{ end }}</a></li>
+    {{ end }}
+  </ul>
+  {{ else }}
+  {{ if not .Content }}<p class="soon">Pages for this section are being written.</p>{{ end }}
+  {{ end }}
+</article>
+{{ end }}
